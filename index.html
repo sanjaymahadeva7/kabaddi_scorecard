@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Kabaddi Score Card</title>
+</head>
+<body>>
+
+        
+    <div class="score-card">
+        
+    <div id="score">Kabaddi Score Card</div>
+
+  
+
+<!-- ... (previous HTML code) ... -->
+
+<div class="teams">
+    <div class="team" id="team1">
+        <label for="team1Photo" class="photo-label" onclick="uploadPhoto('team1Photo', 'team1Image')">
+            <img src="https://thumbs.dreamstime.com/b/concept-sportsman-playing-kabaddi-vector-illustration-73688043.jpg" alt="Team 1 Photo" id="team1Image" />
+            <span>image</span>
+        </label>
+        <input type="file" id="team1Photo" accept="image/*" style="display: none" onchange="handlePhoto('team1Photo', 'team1Image')"/>
+        <h2 contenteditable="true" oninput="updateTeamName('team1', this)">Team 1</h2>
+        <div class="score-box">
+            <h1><p>Score: <span id="team1Score">0</span></p></h1>
+            <div>
+            <button onclick="incrementScore('team1')">+1</button>
+            <button onclick="decrementScore('team1')">-1</button>
+        </div>
+        </div>
+    </div>
+
+    <div class="team" id="team2">
+        <label for="team2Photo" class="photo-label" onclick="uploadPhoto('team2Photo', 'team2Image')">
+            <img src="https://thumbs.dreamstime.com/b/concept-sportsman-playing-kabaddi-vector-illustration-73688043.jpg" alt="Team 2 Photo" id="team2Image" />
+            <span>image</span>
+        </label>
+        <input type="file" id="team2Photo" accept="image/*" style="display: none" onchange="handlePhoto('team2Photo', 'team2Image')"/>
+        <h2 contenteditable="true" oninput="updateTeamName('team2', this)">Team 2</h2>
+        <div class="score-box">
+            <h1><p>Score: <span id="team2Score">0</span></p></h1>
+            <div>
+            <button onclick="incrementScore('team2')">+1</button>
+            <button onclick="decrementScore('team2')">-1</button>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+        <button onclick="resetScores()">Reset Scores</button>
+    </div>
+
+
+    <div class="timer-container top-right">
+        <div class="timer">
+            <h2> Match Timer</h2>
+            <input type="number" id="timerInput" placeholder="Set time in minutes">
+        <div id="timerButtons">
+            <button onclick="startTimer()">Start</button>
+            <button onclick="stopTimer()">Stop</button>
+            <button onclick="resetTimer()">Reset</button>
+        </div>
+            <div id="timerDisplay">0:00</div>
+        </div>
+    </div>
+
+
+    <audio id="beepSound" src="https://media.geeksforgeeks.org/wp-content/uploads/20190531135120/beep.mp3"></audio>
+
+
+    <div class="timer-container bottom-left">
+        <div class="timer">
+            <h2>Raiding Timer</h2>
+            <div id="startButton">
+            <button onclick="startSecondTimer()">Start</button>
+            </div>
+            <button onclick="stopSecondTimer()">Stop</button>
+            <button onclick="resetSecondTimer()">Reset</button>
+            <div id="secondTimerDisplay">00:30</div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
